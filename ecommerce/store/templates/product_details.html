@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}    
+<div class="container mt-4">
+    <div class="row">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'media/bicicleta-pdp-1.webp' %}" class="d-block w-100" alt="Foto de una bicicleta">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'media/bicicleta-pdp-2.webp' %}" class="d-block w-100" alt="Foto de una bicicleta">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'media/bicicleta-pdp-3.webp' %}" class="d-block w-100" alt="Foto de una bicicleta">
+                </div>
+            </div>
+            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="col-md-4 mt-4">
+            <h2>BICICLETA ALTITUDE R30</h2>
+            <ul>
+                <li>Cuadro: Altitude Aluminio 6061</li>
+                <li>Horquilla: JAVA Rigida700C, Carbon</li>
+                <li>Volante: JIANKUN 30/50T</li>
+            </ul>
+            <p>Precio: $799.990</p>
+            <label>ARO:</label>
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary" for="btnradio1">24</label>
+                
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" disabled>
+                <label class="btn btn-outline-danger" for="btnradio2">26</label>
+                
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="btnradio3">29</label>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-secondary" onclick="mostrarAlerta()">Añadir al carro</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <h4>Características</h4>
+            <ul>
+                <li>Cuadro: Altitude Aluminio 6061</li>
+                <li>Peso: Talla S: 12,84 kg / Talla M: 13,14 kg / Talla L: 13,37 kg</li>
+                <li>Horquilla: JAVA Rigida700C, Carbon</li>
+                <li>Manilla de cambio: SHIMANO 9 velocidades</li>
+                <li>Cambio: SHIMANO R3000</li>
+                <li>Cassette:11-28, 9 velocidades</li>
+            </ul>
+            <h4>Detalles</h4>
+            <p>Bicicleta Ruta Altitude R30. Cuadro: Altitude Aluminio 6061. Peso: Talla S: 12,84 kg / Talla M: 13,14 kg / Talla L: 13,37 kg. Horquilla: JAVA Rigida700C, Carbon. Manilla de cambio: SHIMANO 9 velocidades. Cambio: SHIMANO R3000. Cassette:11-28, 9 velocidades. Volante: JIANKUN 30/50T. Desviador: SHIMANO R3000. Neumáticos: CST 700x25. Ruedas: C-STAR 700C. , 32hoyos. Frenos: Disco Mecánico. Manubrio: 31.8mm,420mm largo. Tubo asiento: 31,6mm y 350mm de largo. Tee: 100mm de largo , 7°. Nos reservamos el derecho a modificar la información de los productos que aparecen en esta web o fichas de información sin previo aviso, incluido el equipamiento,las especificaciones, modelos, colores y materiales.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

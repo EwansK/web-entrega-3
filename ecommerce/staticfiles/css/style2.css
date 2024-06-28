@@ -1,0 +1,17 @@
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* ancho de la imágenes */
+    max-height: 400px; /* alto definido de la imagen  */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+}
+
+.carousel {
+    width: 600px; /* Ancho del carrusel */
+    height: 400px; /* Altodel carrusel */
+    overflow: hidden; /* Oculta el contenido que se desborde */
+}
+
+.product-info {
+    margin-top: -20px; /* Ajusta el margen superior del contenedor del texto */
+}

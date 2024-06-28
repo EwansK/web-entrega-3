@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<!-- Products Section -->
+<div class="container my-4">
+  <div class="row justify-content-center div-cards">
+    {% for product in products %}
+    <div class="col-md-3 mb-4">
+      <div class="card" onclick="window.location.href='{% url 'product_details' %}';">
+        <img class="card-img-top mx-auto d-block" src="{{ product.image.url }}" alt="Foto de una bicicleta">
+        <div class="card-body text-center">
+          <h4 class="card-precio">{{ product.price }}</h4>
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="paginador">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link text-dark" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+      <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+      <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link text-dark" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+{% endblock %}
+<!-- footer - company info -->
+<section>
+  <div class="container-fluid">
+    <footer class="d-flex flex-wrap py-3 my-4 border-top bg-light">
+      <div class="col-md-4 text-body-secondary text-center border-end">
+        <h5 class="mb-3">Nuestra tienda</h5>
+        <p>Sucursales</p>
+        <p>Servicio técnico</p>
+        <p>Contacto</p>
+      </div>
+        
+      <div class="col-md-4 text-body-secondary text-center border-end">
+        <h5 class="mb-3">Métodos de pago</h5>
+          <img src="{% static 'media/visa_icon.png' %}" width="40">
+          <img src="{% static 'media/mastercard_curved_icon.png' %}" width="40">
+          <img src="{% static 'media/american_express_icon.png' %}" width="40">
+          <img src="{% static 'media/dinersclub_icon.png' %}" width="40">
+          <img src="{% static 'media/paypal_curved_icon.png' %}" width="40">
+      </div>
+
+      <div class="col-md-4 text-body-secondary text-center">
+        <h5 class="mb-3">¡Síguenos en redes sociales!</h5>
+          <img src="{% static 'media/facebook.png' %}" width="40" height="40">
+          <img src="{% static 'media/instagram.png' %}" width="45" height="45">
+          <img src="{% static 'media/twitter.png' %}" width="40" height="40">
+          <img src="{% static 'media/tiktok.png' %}" width="48" height="48">
+          <br>
+          <br>
+          <p class="text-center">© 2024 MasterBikes, S.A.</p>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- Custom Scripts -->
+<script src="{% static 'script/script2.js' %}"></script>
+<script src="{% static 'script/script3.js' %}"></script>
+
+</body>
+</html>

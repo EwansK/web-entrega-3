@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <h1 class="text-center text-body-secondary my-3">Formulario de registro</h1>    
+    <div class="container d-flex justify-content-center p-4"> 
+        <form id="form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <!-- Add confirmation email field -->
+            <div class="mb-3">
+                <label for="id_confirm_email">Confirmar E-Mail</label>
+                <input type="email" id="id_confirm_email" name="confirm_email" class="form-control" required>
+                {% if form.confirm_email.errors %}
+                    {% for error in form.confirm_email.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-secondary">Registrarse</button>
+            </div>
+        </form>  
+    </div>   
+</section>
+<!-- Modal -->
+<div class="modal fade" id="modal_submit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
